@@ -1,0 +1,731 @@
+Version = 181
+Identifier      = 
+;
+[Type]
+Single ODE      = No
+System of ODEs  = Yes
+Map             = No
+Dimension/Order = 9
+Stack length    = 1000
+P-code length   = 10000
+Heaviside(0)    = 0.5
+;
+[Variables]
+Independent variable      = t
+Dependent variable(s)     = x
+Individual names:
+V1
+m1
+h1
+V2
+m2
+h2
+V3
+m3
+h3
+Independent variable(0)   = t0
+Dependent variable(0)     = x0
+Individual names(0):
+
+
+
+
+
+
+
+
+
+
+
+;
+[Parameters]
+Parameters                = 13
+GK2 = 30
+EK = -0.07
+ENa = 0.045
+GNa = 160
+GI = 8
+Pol = -0.012
+K2shft = -0.02
+shftNam = 0.0035
+shftNah = 0.0065
+tauK2 = 0.9
+tauhNa = 0.0405
+EI = -0.046
+Esyn = -0.0625
+Poincare/Bifurcation time = tp
+Phase-portrait x min      = 0
+Phase-portrait x name     = nx
+Phase-portrait x max      = 0
+Phase-portrait y min      = 0
+Phase-portrait y name     = ny
+Phase-portrait y max      = 0
+;
+[Equations]
+Definitions:
+-2*(GK2*m1*m1*(V1-EK)+GNa*1/(1+exp(-150*(V1+0.027+shftNam)))^3*h1*(V1-ENa)+GI*(V1-EI)+Pol)
+(1/(1+exp(-83*(V1+0.018+K2shft+0.0)))-m1)/tauK2
+(1/(1+exp(500*(V1+0.026+shftNah)))-h1)/tauhNa
+-2*(GK2*m2*m2*(V2-EK)+GNa*1/(1+exp(-150*(V2+0.027+shftNam)))^3*h2*(V2-ENa)+GI*(V2-EI)+Pol)
+(1/(1+exp(-83*(V2+0.018+K2shft+0.0)))-m2)/tauK2
+(1/(1+exp(500*(V2+0.026+shftNah)))-h2)/tauhNa
+0
+0
+0
+Delay                     = 0
+Discontinuities           = 
+;
+[Initial values]
+Independent variable      = 0
+Dependent variable(s):
+-0.08
+1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+Initial functions:
+
+
+
+
+
+
+
+
+
+Point                     = 0
+Iterations                = 0
+Error                     = 1e-05
+Boundary functions:
+
+
+
+
+
+
+
+
+
+;
+[Range]
+First value               = 0
+Last value                = 1e+20
+Infinity                  = 1e+20
+Interpolate               = Yes
+Step                      = 0.002
+Backward                  = No
+Pause                     = 0
+Retarded points           = 100
+Real time                 = 0
+Auto start                = No
+Idle                      = No
+Lowest                    = No
+Below normal              = No
+Normal                    = Yes
+Above normal              = No
+Highest                   = No
+Time critical             = No
+;
+[Method]
+Tolerance                 = 1e-05
+h                         = 0.001
+h max.                    = 0.001
+Integration code          = Runge-Kutta 4
+;
+[Status line]
+First expression          = t
+Second expression         = x[1]
+Numerical format          = t = %g   x = %g
+Frequency                 = 0
+;
+[Mathematica]
+Initialization            = 
+;
+[Graphics window] = 0.116429,-0.0197095,0.409286,0.595436,0
+Title                 = (m,V)
+Window                = 
+Min. X                = -0.01
+X axis                = m1
+Max. X                = 0.6
+Min. Y                = -0.06
+Y axis                = V1
+Max. Y                = 0.04
+Continuous line       = Yes
+Frequency             = 1
+Direction field       = No
+Cell length           = 24
+Mark length           = 12
+Axes location         = 
+Drawing color         = FF0000
+Drawing width         = 0
+Grid color            = 0
+Grid width            = 0
+Direction field color = 0
+Direction field width = 0
+Background color      = FFFFFF
+Width (px)            = 0
+Height (px)           = 0
+Arbitrary aspect      = Yes
+Adjust X range        = No
+Adjust Y range        = No
+Square                = No
+Adjust width          = No
+Adjust height         = No
+Poincare section      = No
+Condition             = 
+Error                 = 1e-05
+Increasing            = No
+Decreasing            = No
+Capture               = 1
+Select in X axis      = 2
+Select in Y axis      = 1
+Step in X axis        = 0.0001
+Step in Y axis        = 0.0001
+Angular step          = 15
+Zoom factor           = 10
+Fractal order         = 0
+Plotter               = No
+Frame                 = Yes
+Pen                   = 3
+Width                 = 0
+Speed                 = 0
+Line type             = 0
+Device                = 
+Driver                = 
+No bitmap             = No
+Copy bitmap           = No
+Stretch bitmap        = Yes
+Phi                   = 30
+Theta                 = 60
+Psi                   = 90
+Origin                = 0
+Distance              = 0
+Print Info            = No
+Total X               = 0
+Total Y               = 0
+Left margin           = 0
+Print width           = 0
+Top margin            = 0
+Print height          = 0
+Print unit            = 0
+Print mode            = 0
+Pixels per point      = 0
+Basic width           = 0
+Frame width           = 0
+Min. distance         = 0
+Print EPSF            = No
+Invert print          = No
+Include elements      = No
+Preserve aspect       = No
+Rotate PS             = No
+EPSF File             = 
+Post process          = No
+Post program          = 
+Post arguments        = 
+Post delete           = No
+;
+[Graphics window] = 0.543571,-0.00414938,0.27,0.353734,0
+Title                 = (h,V)
+Window                = 
+Min. X                = -0.02
+X axis                = h1
+Max. X                = 1.02
+Min. Y                = -0.07
+Y axis                = V1
+Max. Y                = 0.04
+Continuous line       = Yes
+Frequency             = 1
+Direction field       = No
+Cell length           = 24
+Mark length           = 12
+Axes location         = 
+Drawing color         = FF0000
+Drawing width         = 0
+Grid color            = 0
+Grid width            = 0
+Direction field color = 0
+Direction field width = 0
+Background color      = FFFFFF
+Width (px)            = 0
+Height (px)           = 0
+Arbitrary aspect      = Yes
+Adjust X range        = No
+Adjust Y range        = No
+Square                = No
+Adjust width          = No
+Adjust height         = No
+Poincare section      = No
+Condition             = 
+Error                 = 1e-05
+Increasing            = No
+Decreasing            = No
+Capture               = 1
+Select in X axis      = 1
+Select in Y axis      = 2
+Step in X axis        = 0.01
+Step in Y axis        = 0.01
+Angular step          = 15
+Zoom factor           = 10
+Fractal order         = 0
+Plotter               = No
+Frame                 = Yes
+Pen                   = 1
+Width                 = 0
+Speed                 = 0
+Line type             = 0
+Device                = 
+Driver                = 
+No bitmap             = No
+Copy bitmap           = No
+Stretch bitmap        = Yes
+Phi                   = 30
+Theta                 = 60
+Psi                   = 90
+Origin                = 0
+Distance              = 0
+Print Info            = No
+Total X               = 0
+Total Y               = 0
+Left margin           = 0
+Print width           = 0
+Top margin            = 0
+Print height          = 0
+Print unit            = 0
+Print mode            = 0
+Pixels per point      = 0
+Basic width           = 0
+Frame width           = 0
+Min. distance         = 0
+Print EPSF            = No
+Invert print          = No
+Include elements      = No
+Preserve aspect       = No
+Rotate PS             = No
+EPSF File             = 
+Post process          = No
+Post program          = 
+Post arguments        = 
+Post delete           = No
+;
+[Graphics window] = -0.00571429,0.603734,0.93,0.328838,0
+Title                 = (t,  V)
+Window                = 
+Min. X                = 0
+X axis                = t
+Max. X                = 200
+Min. Y                = -0.1
+Y axis                = V1+.034
+Max. Y                = 0.1
+Continuous line       = Yes
+Frequency             = 1
+Direction field       = No
+Cell length           = 24
+Mark length           = 12
+Axes location         = 
+Drawing color         = FF0000
+Drawing width         = 0
+Grid color            = 0
+Grid width            = 0
+Direction field color = 0
+Direction field width = 0
+Background color      = FFFFFF
+Width (px)            = 0
+Height (px)           = 0
+Arbitrary aspect      = Yes
+Adjust X range        = No
+Adjust Y range        = No
+Square                = No
+Adjust width          = No
+Adjust height         = No
+Poincare section      = No
+Condition             = 
+Error                 = 1e-05
+Increasing            = No
+Decreasing            = No
+Capture               = 1
+Select in X axis      = 1
+Select in Y axis      = 2
+Step in X axis        = 0.0001
+Step in Y axis        = 0.0001
+Angular step          = 15
+Zoom factor           = 10
+Fractal order         = 0
+Plotter               = No
+Frame                 = Yes
+Pen                   = 1
+Width                 = 0
+Speed                 = 0
+Line type             = 0
+Device                = 
+Driver                = 
+No bitmap             = No
+Copy bitmap           = No
+Stretch bitmap        = Yes
+Phi                   = 30
+Theta                 = 60
+Psi                   = 90
+Origin                = 0
+Distance              = 0
+Print Info            = No
+Total X               = 0
+Total Y               = 0
+Left margin           = 0
+Print width           = 0
+Top margin            = 0
+Print height          = 0
+Print unit            = 0
+Print mode            = 0
+Pixels per point      = 0
+Basic width           = 0
+Frame width           = 0
+Min. distance         = 0
+Print EPSF            = No
+Invert print          = No
+Include elements      = No
+Preserve aspect       = No
+Rotate PS             = No
+EPSF File             = 
+Post process          = No
+Post program          = 
+Post arguments        = 
+Post delete           = No
+;
+[Graphics window] = 0.191429,0.370332,0.265714,0.35166,-1
+Title                 = (m2,V2)
+Window                = 
+Min. X                = 0
+X axis                = m2
+Max. X                = 0.5
+Min. Y                = -0.07
+Y axis                = V2
+Max. Y                = 0.04
+Continuous line       = Yes
+Frequency             = 1
+Direction field       = No
+Cell length           = 24
+Mark length           = 12
+Axes location         = 
+Drawing color         = FF
+Drawing width         = 0
+Grid color            = 0
+Grid width            = 0
+Direction field color = 0
+Direction field width = 0
+Background color      = FFFFFF
+Width (px)            = 0
+Height (px)           = 0
+Arbitrary aspect      = Yes
+Adjust X range        = No
+Adjust Y range        = No
+Square                = No
+Adjust width          = No
+Adjust height         = No
+Poincare section      = No
+Condition             = 
+Error                 = 1e-05
+Increasing            = No
+Decreasing            = No
+Capture               = 1
+Select in X axis      = 2
+Select in Y axis      = 1
+Step in X axis        = 0.0001
+Step in Y axis        = 0.0001
+Angular step          = 15
+Zoom factor           = 10
+Fractal order         = 0
+Plotter               = No
+Frame                 = Yes
+Pen                   = 1
+Width                 = 0
+Speed                 = 0
+Line type             = 0
+Device                = 
+Driver                = 
+No bitmap             = No
+Copy bitmap           = No
+Stretch bitmap        = Yes
+Phi                   = 30
+Theta                 = 60
+Psi                   = 90
+Origin                = 0
+Distance              = 0
+Print Info            = No
+Total X               = 0
+Total Y               = 0
+Left margin           = 0
+Print width           = 0
+Top margin            = 0
+Print height          = 0
+Print unit            = 0
+Print mode            = 0
+Pixels per point      = 0
+Basic width           = 0
+Frame width           = 0
+Min. distance         = 0
+Print EPSF            = No
+Invert print          = No
+Include elements      = No
+Preserve aspect       = No
+Rotate PS             = No
+EPSF File             = 
+Post process          = No
+Post program          = 
+Post arguments        = 
+Post delete           = No
+;
+[Graphics window] = 0.0207143,0.56639,0.292857,0.379668,-1
+Title                 = (m',V)
+Window                = (m,V)
+Min. X                = -0
+X axis                = 1/(1+exp(-83*(t+0.018+K2shft)))
+Max. X                = 0.5
+Min. Y                = -0.07
+Y axis                = t
+Max. Y                = 0.04
+Continuous line       = Yes
+Frequency             = 1
+Direction field       = No
+Cell length           = 24
+Mark length           = 12
+Axes location         = 
+Drawing color         = FFFF
+Drawing width         = 0
+Grid color            = 0
+Grid width            = 0
+Direction field color = 0
+Direction field width = 0
+Background color      = FFFFFF
+Width (px)            = 0
+Height (px)           = 0
+Arbitrary aspect      = Yes
+Adjust X range        = No
+Adjust Y range        = No
+Square                = No
+Adjust width          = No
+Adjust height         = No
+Poincare section      = No
+Condition             = 
+Error                 = 1e-05
+Increasing            = No
+Decreasing            = No
+Capture               = 1
+Select in X axis      = 1
+Select in Y axis      = 2
+Step in X axis        = 0.01
+Step in Y axis        = 0.01
+Angular step          = 15
+Zoom factor           = 10
+Fractal order         = 0
+Plotter               = No
+Frame                 = Yes
+Pen                   = 1
+Width                 = 0
+Speed                 = 0
+Line type             = 0
+Device                = 
+Driver                = 
+No bitmap             = No
+Copy bitmap           = No
+Stretch bitmap        = Yes
+Phi                   = 30
+Theta                 = 60
+Psi                   = 90
+Origin                = 0
+Distance              = 0
+Print Info            = No
+Total X               = 0
+Total Y               = 0
+Left margin           = 0
+Print width           = 0
+Top margin            = 0
+Print height          = 0
+Print unit            = 0
+Print mode            = 0
+Pixels per point      = 0
+Basic width           = 0
+Frame width           = 0
+Min. distance         = 0
+Print EPSF            = No
+Invert print          = No
+Include elements      = No
+Preserve aspect       = No
+Rotate PS             = No
+EPSF File             = 
+Post process          = No
+Post program          = 
+Post arguments        = 
+Post delete           = No
+;
+[Graphics window] = -0.00642857,0.771784,0.894286,0.190871,-1
+Title                 = (t,  V2)
+Window                = (t,  V)
+Min. X                = 0
+X axis                = t
+Max. X                = 1000
+Min. Y                = -5
+Y axis                = V2-0.05
+Max. Y                = 15
+Continuous line       = Yes
+Frequency             = 1
+Direction field       = No
+Cell length           = 24
+Mark length           = 12
+Axes location         = 
+Drawing color         = FF00
+Drawing width         = 0
+Grid color            = 0
+Grid width            = 0
+Direction field color = 0
+Direction field width = 0
+Background color      = FFFFFF
+Width (px)            = 0
+Height (px)           = 0
+Arbitrary aspect      = Yes
+Adjust X range        = No
+Adjust Y range        = No
+Square                = No
+Adjust width          = No
+Adjust height         = No
+Poincare section      = No
+Condition             = 
+Error                 = 1e-05
+Increasing            = No
+Decreasing            = No
+Capture               = 1
+Select in X axis      = 1
+Select in Y axis      = 2
+Step in X axis        = 0.01
+Step in Y axis        = 0.01
+Angular step          = 15
+Zoom factor           = 10
+Fractal order         = 0
+Plotter               = No
+Frame                 = Yes
+Pen                   = 1
+Width                 = 0
+Speed                 = 0
+Line type             = 0
+Device                = 
+Driver                = 
+No bitmap             = No
+Copy bitmap           = No
+Stretch bitmap        = Yes
+Phi                   = 30
+Theta                 = 60
+Psi                   = 90
+Origin                = 0
+Distance              = 0
+Print Info            = No
+Total X               = 0
+Total Y               = 0
+Left margin           = 0
+Print width           = 0
+Top margin            = 0
+Print height          = 0
+Print unit            = 0
+Print mode            = 0
+Pixels per point      = 0
+Basic width           = 0
+Frame width           = 0
+Min. distance         = 0
+Print EPSF            = No
+Invert print          = No
+Include elements      = No
+Preserve aspect       = No
+Rotate PS             = No
+EPSF File             = 
+Post process          = No
+Post program          = 
+Post arguments        = 
+Post delete           = No
+;
+[Graphics window] = 0.422143,0.0809129,0.299286,0.509336,-1
+Title                 = (m2,V2)
+Window                = (m,V)
+Min. X                = 0
+X axis                = m2
+Max. X                = 0.5
+Min. Y                = -0.07
+Y axis                = V2
+Max. Y                = 0.04
+Continuous line       = Yes
+Frequency             = 1
+Direction field       = No
+Cell length           = 24
+Mark length           = 12
+Axes location         = 
+Drawing color         = FF00
+Drawing width         = 0
+Grid color            = 0
+Grid width            = 0
+Direction field color = 0
+Direction field width = 0
+Background color      = FFFFFF
+Width (px)            = 0
+Height (px)           = 0
+Arbitrary aspect      = Yes
+Adjust X range        = No
+Adjust Y range        = No
+Square                = No
+Adjust width          = No
+Adjust height         = No
+Poincare section      = No
+Condition             = 
+Error                 = 1e-05
+Increasing            = No
+Decreasing            = No
+Capture               = 1
+Select in X axis      = 5
+Select in Y axis      = 4
+Step in X axis        = 0.01
+Step in Y axis        = 0.01
+Angular step          = 15
+Zoom factor           = 10
+Fractal order         = 0
+Plotter               = No
+Frame                 = Yes
+Pen                   = 1
+Width                 = 0
+Speed                 = 0
+Line type             = 0
+Device                = 
+Driver                = 
+No bitmap             = No
+Copy bitmap           = No
+Stretch bitmap        = Yes
+Phi                   = 30
+Theta                 = 60
+Psi                   = 90
+Origin                = 0
+Distance              = 0
+Print Info            = No
+Total X               = 0
+Total Y               = 0
+Left margin           = 0
+Print width           = 0
+Top margin            = 0
+Print height          = 0
+Print unit            = 0
+Print mode            = 0
+Pixels per point      = 0
+Basic width           = 0
+Frame width           = 0
+Min. distance         = 0
+Print EPSF            = No
+Invert print          = No
+Include elements      = No
+Preserve aspect       = No
+Rotate PS             = No
+EPSF File             = 
+Post process          = No
+Post program          = 
+Post arguments        = 
+Post delete           = No
+;
+[Notes]
